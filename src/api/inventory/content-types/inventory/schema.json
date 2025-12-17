@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventories",
+  "info": {
+    "singularName": "inventory",
+    "pluralName": "inventories",
+    "displayName": "Inventory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_name": {
+      "type": "string"
+    },
+    "product_description": {
+      "type": "text"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "condition": {
+      "type": "enumeration",
+      "enum": [
+        "good",
+        "damaged",
+        "repair"
+      ]
+    },
+    "acquisition_date": {
+      "type": "date"
+    },
+    "acquisition_cost": {
+      "type": "decimal"
+    },
+    "total_cost": {
+      "type": "decimal"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "inventory"
+    }
+  }
+}
